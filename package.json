@@ -13,6 +13,8 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "csvtojson": "^2.0.10",
+    "express": "^4.21.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.31.3",
@@ -45,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "In the pokemon world, there are hundreds of pokemon species. In this world, a trainer's best friend is the Pokedex - a pocket wiki about all pokemon where they could find, categorize, and search for a pokemon.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
