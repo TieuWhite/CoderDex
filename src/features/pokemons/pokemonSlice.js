@@ -18,7 +18,7 @@ export const getPokemons = createAsyncThunk(
         });
       };
       await timeout();
-      return response.data;
+      return response;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -89,6 +89,7 @@ export const pokemonSlice = createSlice({
       nextPokemon: null,
       previousPokemon: null,
     },
+
     search: "",
     type: "",
     page: 1,
@@ -106,6 +107,7 @@ export const pokemonSlice = createSlice({
     },
     searchQuery: (state, action) => {
       state.search = action.payload;
+      getPokemons();
     },
   },
   extraReducers: {

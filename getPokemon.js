@@ -7,7 +7,10 @@ const getPokemon = async () => {
     const pokemonData = await csv().fromFile("pokemon.csv");
     const results = pokemonData
       .map((data, index) => {
-        const ImageURL = `http://localhost:3000/images/${index + 1}.png`;
+        const ImageURL = `http://localhost:3000/images/pokemon/${
+          index + 1
+        }.png`;
+
         const imagePath = `./public/images/pokemon/${index + 1}.png`;
 
         if (!fs.existsSync(imagePath)) {

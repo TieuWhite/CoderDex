@@ -3,16 +3,12 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Button, Container, Grid, Stack } from "@mui/material";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PokeType } from "./PokeType";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changePage,
-  getPokemons,
-  typeQuery,
-} from "../features/pokemons/pokemonSlice";
+import { changePage, typeQuery } from "../features/pokemons/pokemonSlice";
 import { Link } from "react-router-dom";
 import { pokemonTypes } from "../pokemonTypes";
 
@@ -124,12 +120,8 @@ export default function PokeList() {
   const [next, setNext] = useState(false);
   const { pokemons } = useSelector((state) => state.pokemons);
 
-  useEffect(() => {
-    dispatch(getPokemons());
-  }, [dispatch]);
-
   const handleChangePage = () => {
-    dispatch(changePage());
+    dispatch(changePage(), [dispatch]);
   };
 
   return (
